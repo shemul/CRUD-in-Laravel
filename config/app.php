@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 	'Way\Generators\GeneratorsServiceProvider',
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------

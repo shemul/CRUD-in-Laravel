@@ -12,5 +12,6 @@
 |
 */
 
-route::get('/apps','appController@getIndex');
-route::get('/apps/user','appController@getUsers');
+route::get('apps', 'appController@getIndex');
+route::get('apps/create', 'appController@getCreate');
+route::post('apps/save', 'appController@postSave');
