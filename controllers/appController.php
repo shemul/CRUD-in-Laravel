@@ -17,19 +17,40 @@ class appController extends BaseController {
 
 
 	public function getIndex()
-	{
-		$folks = DB::table('test_table')->get();
-		return View::make('index');
+	{	
+		return View::make('home');
 	}
 	public function getCreate()
 	{
 		return View::make('create');
 	}
-
-	public function postSave()
+	public function postCreate()
+	{
+		return View::make('home');
+	}
+	public function getView()
+	{
+		return View::make('view');
+	}
+	public function getUpdate()
+	{
+		return View::make('update');
+	}
+	public function getDelete()
+	{
+		return View::make('delete');
+	}
+	public function postDeleteact()
 	{
 		$name = Input::get('name');
-		var_dump($name);
-	}
+		$result = DB::delete('SELECT * FROM test_table where name = "hi" ');
+		if ($result == 0 ) {
+			return "Successfully Deleted ! " . $result;
+		} else {
+			return "Unsuccessfullt ";
+		}
 
+		
+	}
+	
 }

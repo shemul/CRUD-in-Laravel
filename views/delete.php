@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,17 +17,25 @@
 		<![endif]-->
 	</head>
 	<body>
-	<form action="/create" method="POST" role="form">
-			<legend>Form title</legend>
-		
-			<div class="form-group">
-				<label for="">label</label>
-				<input type="text" name="name" id="name" class="form-control"  placeholder="Input field">
-			</div>
-		
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 			
-		
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<form action="/delete/act" method="POST" role="form">
+				<legend>Type What you want to Delete</legend>
+			
+				<div class="form-group">
+					<label for="">label</label>
+					<input type="text" name="name" class="form-control" id="" placeholder="Input field">
+				</div>
+				
+				
+			
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			
+		</div>
 	</body>
 </html>

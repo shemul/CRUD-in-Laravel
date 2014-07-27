@@ -10,8 +10,12 @@
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the Closure to execute when that URI is requested.
 |
-*/
+*/		
 
-route::get('apps', 'appController@getIndex');
-route::get('apps/create', 'appController@getCreate');
-route::post('apps/save', 'appController@postSave');
+Route::get('/','appController@getIndex');
+Route::get('/create','appController@getCreate');
+Route::get('/view','appController@getView');
+Route::get('/update','appController@getUpdate');
+Route::get('/delete','appController@getDelete');
+Route::post('/create','appController@postCreate');
+Route::post('/delete/act','appController@postDeleteact');
