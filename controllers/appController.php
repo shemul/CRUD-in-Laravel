@@ -22,7 +22,8 @@ class appController extends BaseController {
 	}
 	public function getCreate()
 	{
-		return View::make('create');
+		$result = Person::create(['id'=>'12','name'=>'hi']);
+		
 	}
 	public function postCreate()
 	{
@@ -30,7 +31,8 @@ class appController extends BaseController {
 	}
 	public function getView()
 	{
-		return View::make('view');
+		$result = Person::all();
+		die(var_dump($result->toArray()));
 	}
 	public function getUpdate()
 	{
@@ -38,18 +40,26 @@ class appController extends BaseController {
 	}
 	public function getDelete()
 	{
-		return View::make('delete');
+		$result = Person::delete(['name'=>'hi']);
 	}
 	public function postDeleteact()
 	{
-		$name = Input::get('name');
-		$result = DB::delete('SELECT * FROM test_table where name = "hi" ');
-		if ($result == 0 ) {
-			return "Successfully Deleted ! " . $result;
-		} else {
-			return "Unsuccessfullt ";
-		}
+		
+		
 
+		
+	}
+
+	public function getShow($name)
+	{
+		//$result = DB::table('people')->find($name);
+		$result = Person::find($name);
+	//	die(var_dump($result->toArray()));
+		if (null == $result) {
+			return "Errrr";
+		} else {
+			return $result->name;
+		}
 		
 	}
 	
